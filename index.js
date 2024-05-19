@@ -32,15 +32,6 @@ window.addEventListener("load", function(){
     }
 )
 
-// document.getElementById("btDice1").addEventListener("click", function(){
-//     let dicesImg = ['./imgs/dice_1.jpg','./imgs/dice_2.jpg','./imgs/dice_3.jpg','./imgs/dice_4.jpg','./imgs/dice_5.jpg','./imgs/dice_6.jpg'];
-//     let animationDice = './imgs/dice_animation.gif';
-//     let numberPlayer1 = Math.floor(Math.random() * dicesImg.length)
-//     document.getElementById("dicePlayer1").setAttribute("src", animationDice);
-//     setTimeout(function() {return document.getElementById("dicePlayer1").setAttribute("src", dicesImg[numberPlayer1])}, 1000);
-//     }
-// )
-
 document.getElementById("btDice1").addEventListener("click", function(){
      let player1 = rollDice("dicePlayer1");
      results.push([namePlayer1, player1]);
@@ -58,10 +49,6 @@ document.getElementById("btDice2").addEventListener("click", function(){
 
 
 
-// btPlayer2.addEventListener("click", rollDice("Player 2"))
-
-
-
 function rollDice(id){
     let dicesImg = ['./imgs/dice_1.jpg','./imgs/dice_2.jpg','./imgs/dice_3.jpg','./imgs/dice_4.jpg','./imgs/dice_5.jpg','./imgs/dice_6.jpg'];
     let animationDice = './imgs/dice_animation.gif';
@@ -75,12 +62,6 @@ function rollDice(id){
         dice2 = true
     }
     return numberPlayer;
-
-    
-    // if( dice1 == true && dice2 == true){
-    //     setTimeout(verifyWinner, 3000);
-    // }
-    
 }
 
 function verifyWinner(results){
@@ -91,7 +72,7 @@ function verifyWinner(results){
                 return results.length = 0, dice1 = false, dice2 = false
             }
             else if(results[0][1] == results[1][1]){
-                alert( "It's even, Play again losers!");
+                alert( "It's a tie, Play again!");
                 return results.length = 0, dice1 = false, dice2 = false
             }else{
                 alert( results[1][0] + " is the winner!");
